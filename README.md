@@ -20,4 +20,4 @@ jimmy.charite@gmail.com
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/jcharit1/Lending-Club-Loan-Performance/blob/master/License.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/jcharit1/Identifying-Ad-Images/blob/master/License.md) file for details
