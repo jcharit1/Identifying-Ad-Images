@@ -43,6 +43,12 @@ Features 1, 2, & 5 seem to be ad attributes and 3 & 4 seem to be the url of the 
 
 Many more model training approaches were left off of the table. For example, only L2 (ridge) regularization was used for the logistic classifier and SVM were not used (to save time on first iteration of training). However, since the first iteration of training yielded models with an AUC ROC of 0.99, further refinement of the model training process seemed unnecessary.
 
+### Key Files
+
+1. [Code to clean the data](https://github.com/jcharit1/Identifying-Ad-Images/blob/master/code/initial_data_exploration.ipynb)
+2. [Code to train and test the models](https://github.com/jcharit1/Identifying-Ad-Images/blob/master/code/model_training.ipynb)
+3. [Standalone python script for making predictions](https://github.com/jcharit1/Identifying-Ad-Images/blob/master/code/predict_image_type.py)
+
 ## Installing
 
 Uses Python 3.5 and anaconda
