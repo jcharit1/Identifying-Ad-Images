@@ -6,11 +6,11 @@ Code to differentiate ad from non-ad images based on the geometry of the image (
 ### Strategy
 
 The major challenges to building an accurate model were:
-1. Non-random missing data in the continuous variables.
-2. A large number of features given the size of the sample (1,558 vs 3,279).
-3. The overwhelming majority of the features are sparse.
-4. There is only a moderate number of observations.
-5. High class imbalance.
+1. Non-random missing data in the continuous variables.  
+2. A large number of features given the size of the sample (1,558 vs 3,279).  
+3. The overwhelming majority of the features are sparse.  
+4. There is only a moderate number of observations.  
+5. High class imbalance.  
 
 I tackled these challenges by:
 1. Turning the continuous variables into binary variables where missing values is a feature.
