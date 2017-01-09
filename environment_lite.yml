@@ -1,0 +1,10 @@
+name: Jimmy_Charite_py35
+channels: !!python/tuple
+- !!python/unicode
+  'defaults'
+dependencies:
+- numpy=1.11.1=py35_0
+- pandas=0.18.1=np111py35_0
+- anaconda::scikit-learn=0.18.1=np111py35_0
+prefix: /home/jim/anaconda2/envs/
+

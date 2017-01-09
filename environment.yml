@@ -1,4 +1,4 @@
-name: py35
+name: Jimmy_Charite_py35
 channels: !!python/tuple
 - !!python/unicode
   'defaults'
@@ -218,5 +218,5 @@ dependencies:
   - rope-py3k==0.9.4.post1
   - tables==3.2.3.1
   - xgboost==0.6a2
-prefix: /home/jim/anaconda2/envs/py35
+prefix: /home/jim/anaconda2/envs/
 
