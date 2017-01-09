@@ -6,18 +6,18 @@ Code to differentiate ad from non-ad images based on the geometry of the image (
 ### Strategy
 
 The major challenges to building an accurate model were:
-	1. Non-random missing data in the continuous variables.
-	2. A large number of features given the size of the sample (1,558 vs 3,279).
-	3. The overwhelming majority of the features are sparse.
-	4. There is only a moderate number of observations.
-	5. High class imbalance.
+1. Non-random missing data in the continuous variables.
+2. A large number of features given the size of the sample (1,558 vs 3,279).
+3. The overwhelming majority of the features are sparse.
+4. There is only a moderate number of observations.
+5. High class imbalance.
 
 I tackled these challenges by:
-	1. Turning the continuous variables into binary variables where missing values is a feature.
-	2. Using algorithms robust to unfavorable feature to observation ratios --like random forest which will only use a sample of the features per model fit.
-	3. Using variance threshold based feature selection and regularized models to avoid using many uninformative sparse features in the model.
-	4. Avoiding more data-hungre cross-validation strategies like nested cross-validation.
-	5. Adjusted class weights and used sampling techniques like SMOTE and Tomek Link removal.
+1. Turning the continuous variables into binary variables where missing values is a feature.
+2. Using algorithms robust to unfavorable feature to observation ratios --like random forest which will only use a sample of the features per model fit.
+3. Using variance threshold based feature selection and regularized models to avoid using many uninformative sparse features in the model.
+4. Avoiding more data-hungre cross-validation strategies like nested cross-validation.
+5. Adjusted class weights and used sampling techniques like SMOTE and Tomek Link removal.
 
 ### Results
 
@@ -30,11 +30,11 @@ The above strategies resulted in highly predictive models. The best iteration of
 The performance of the best model was highly stable. The standard deviation of the validation fold AUC ROC was 0.012. 
 
 The most importance features in the dataset seemed reasonable. Listed in order of importance (identified using random forest), the top five are:
-	1. ancurl*adclick
-	2. ancurl*adid
-	3. origurl*misfits2
-	4. url*static.wired.com
-	5. ancurl*http+www
+1. ancurl*adclick
+2. ancurl*adid
+3. origurl*misfits2
+4. url*static.wired.com
+5. ancurl*http+www
 
 3 out of 5 of these features seem to be add attributes and two seem to be the url of the owners of the data. 
 
