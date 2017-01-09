@@ -5,7 +5,7 @@ Code to differentiate ad from non-ad images based on the geometry of the image (
 
 ### Strategy
 
-The challenges to building a predictive model are:  
+The challenges to building good models are:  
 
 1. Non-random missing data in the continuous variables.
 2. A large number of features given the size of the sample (1,558 vs 3,279).
@@ -16,10 +16,10 @@ The challenges to building a predictive model are:
 I tackled these challenges by:
 
 1. Turning the continuous variables into binary variables where missing values is a feature.
-2. Using algorithms robust to unfavorable feature to observation ratios --like random forest which will only use a sample of the features per model fit.
-3. Using variance threshold based feature selection and regularized models to avoid using many uninformative sparse features in the model.
+2. Using algorithms robust to unfavorable feature to observation ratios -- like random forest, which will only use a sample of the features per model fit.
+3. Using variance threshold based feature selection and regularized models to avoid introducing too many uninformative sparse features to the model.
 4. Avoiding more data-hungry cross-validation strategies like nested cross-validation.
-5. Adjusting class weights and used sampling techniques like SMOTE and Tomek Link removal.
+5. Adjusting class weights and using sampling techniques like SMOTE and Tomek Link removal.
 
 ### Results
 
@@ -29,7 +29,7 @@ ROC curves on the test data:
 
 The above strategies resulted in highly predictive models. The best iteration of each model explored had an AUC ROC of 0.95 or greater. The best model was the logistic classifier with a 1:1 class weight, the feature variance threshold set to drop only zero variance features, and no sampling-based class imbalance corrections. 
 
-The performance of the best model was highly stable. The standard deviation of the validation fold AUC ROC was 0.012. 
+The performance of the best model was highly stable. The standard deviation of the validation fold AUC ROC was 0.012, a tiny fraction of the average AUC ROC.
 
 The most important features in the dataset seemed reasonable. Listed by order of importance (identified using random forest), the top five are:
 
@@ -41,7 +41,7 @@ The most important features in the dataset seemed reasonable. Listed by order of
 
 Features 1, 2, & 5 seem to be ad attributes and 3 & 4 seem to be the url of the ad source. 
 
-Many more model training approaches were left off of the table. For example, only L2 (ridge) regularization was used for the logistic classifier and SVM were not used to save time on first iteration of training. However, since the first iteration of training yielded models with AUC ROC of 0.99, further refinement of the model training process seemed unnecessary.
+Many more model training approaches were left off of the table. For example, only L2 (ridge) regularization was used for the logistic classifier and SVM were not used (to save time on first iteration of training). However, since the first iteration of training yielded models with an AUC ROC of 0.99, further refinement of the model training process seemed unnecessary.
 
 ## Installing
 
