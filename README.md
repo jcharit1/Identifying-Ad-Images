@@ -5,7 +5,7 @@ Code to differentiate ad from non-ad images based on the geometry of the image (
 
 ### Strategy
 
-The challenges to building good models are:  
+The challenges to building a good model were:  
 
 1. Non-random missing data in the continuous variables.
 2. A large number of features given the size of the sample (1,558 vs 3,279).
